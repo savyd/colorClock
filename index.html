@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by savyd (http://jsbin.com/reseniq/21/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html style="height: 100%;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="MDN WEB DOC"> 
+  <title>Clock Web</title>
+  <script src="scripts/main.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:100" rel="stylesheet" type="text/css">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body style="height: 100%;">
+  <div id="clock" style="font-family: 'Exo 2', sans-serif;text-align: center;position: relative;top: 50%;margin-top: -34px;font-size: 68px;color: white;">
+      
+  </div>
+<script id="jsbin-javascript">
+// JAM BERWARNA
+function colorClock(){
+
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  
+  if (hours <= 9){
+    hours = '0' + hours;
+  }
+  if (minutes <= 9){
+    minutes = '0' + minutes;
+  }
+  if (seconds <= 9){
+    seconds = '0' + seconds;
+  }
+  
+  let clockFace = hours+':'+minutes+':'+seconds;
+  let hexColor = '#'+seconds+minutes+seconds;
+  
+  document.getElementById('clock').innerHTML = clockFace; 
+  document.body.style.background = hexColor;
+  
+  setTimeout(function(){
+    colorClock();
+  }, 1000);
+  
+}
+
+colorClock();
+
+
+</script>
+</body>
+</html>
