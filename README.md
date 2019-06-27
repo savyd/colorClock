@@ -1,1 +1,3 @@
-# colorClock
+---
+Create Digital Clock by js
+---
